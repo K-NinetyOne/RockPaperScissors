@@ -5,16 +5,16 @@ function getComputerChoice() {
      if ( compChoice <= 0.33 ) {
         console.log('Computer chose rock');
         return 'rock';
-}    if ( compChoice > 0.33 && compChoice <= 0.66 ) {
+}    else if ( compChoice > 0.33 && compChoice <= 0.66 ) {
         console.log('Computer chose paper');
          return 'paper';
-}    if ( compChoice > 0.66 && compChoice <= 1 ) {
+}    else if ( compChoice > 0.66 && compChoice <= 1 ) {
         console.log('Computer chose scissors')
         return 'scissors';
 }
 }
 
-//---------------------------------------------------------------------
+//------------------------------------------------------------------------
 
 function getHumanChoice() {
  const userInput = prompt("Choose rock, paper or scissors").toLocaleLowerCase();
@@ -34,58 +34,62 @@ function getHumanChoice() {
 }
 }
 
-//---------------------------------------------------------------------
+//------------------------------------------------------------------------
+
+function playGame () {
 
 let humanScore=0
 let computerScore=0
 
-console.log(`Computer Score: ${computerScore}, Human score: ${humanScore}`)
+        function playRound(humanSelection, computerSelection) {
 
-//--------------------------------------------------------------------
+        //Draws
 
+                if      ( humanSelection == computerSelection ) {
+                                console.log('Draw!');
+                        }      
 
-function playRound() {
+        //Player wins
 
-        const humanChoice = getHumanChoice();
-        const compChoice = getComputerChoice();
+                else if ( humanSelection == 'rock' && computerSelection == 'scissors'
+                        || humanSelection == 'paper' && computerSelection == 'rock'
+                        || humanSelection == 'scissors' && computerSelection == 'paper' ) {
+                                console.log('Player wins!') 
+                                humanScore++;
+                        }      
+        //Computer wins 
+
+                else if ( humanSelection == 'scissors' && computerSelection == 'rock' 
+                        ||  humanSelection == 'rock' && computerSelection == 'paper' 
+                        ||  humanSelection == 'paper' && computerSelection == 'scissors' ) {
+                                console.log('Computer wins!')    
+                                computerScore++;  
+                        }
+}
+
+//Calling 5 rounds
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+playRound(humanSelection, computerSelection);
+
+const humanSelection2 = getHumanChoice();
+const computerSelection2 = getComputerChoice();
+playRound(humanSelection2, computerSelection2);
+
+const humanSelection3 = getHumanChoice();
+const computerSelection3 = getComputerChoice();
+playRound(humanSelection3, computerSelection3);
+
+const humanSelection4 = getHumanChoice();
+const computerSelection4 = getComputerChoice();
+playRound(humanSelection4, computerSelection4);
+
+const humanSelection5 = getHumanChoice();
+const computerSelection5 = getComputerChoice();
+playRound(humanSelection5, computerSelection5);
         
-//Draws
 
-        if      ( humanChoice == compChoice ) {
-                        console.log('Draw!');
-                }      
-
-//Player wins
-
-        else if ( humanChoice == 'rock' && compChoice == 'scissors'
-                || humanChoice == 'paper' && compChoice == 'rock'
-                || humanChoice == 'scissors' && compChoice == 'paper' ) {
-                        console.log('Player wins!') 
-                        return humanScore++;
-                }      
-//Computer wins 
-
-        else if ( humanChoice == 'scissors' && compChoice == 'rock' 
-                ||  humanChoice == 'rock' && compChoice == 'paper' 
-                ||  humanChoice == 'paper' && compChoice == 'scissors' ) {
-                        console.log('Computer wins!')    
-                        return computerScore++;  
-                }
-
-}
-
-//------------------------------------------------------------------------
-
-function playGame () {
-        playRound()
-        playRound()
-        playRound()
-        playRound()
-        playRound()
-        return;
-}
-
-playGame();
 console.log(`Computer Score: ${computerScore}, Human score ${humanScore}`);
 
 //------------------------------------------------------------------------
@@ -97,3 +101,8 @@ console.log(`Computer Score: ${computerScore}, Human score ${humanScore}`);
 }       else if ( humanScore > computerScore ) {
                 console.log('Player wins the game!')
 }
+        return;
+}
+
+playGame();
+
