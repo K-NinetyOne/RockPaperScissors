@@ -8,3 +8,6 @@ This project will have the following steps
 - Declare a winner at the end.
 
 The project brief does not require the use of arrays, loops or error handling for invaid user input. 
+
+Project completed according to project specifications and working in browser console (Firefox and Chromium). 
+Initially working with playRound and score variables outside of playGame function but now rearranged so they exist inside playGame as the project requires. 
