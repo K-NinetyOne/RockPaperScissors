@@ -1,0 +1,43 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+.rps-button {
+  font-size: 24px;
+  padding: 16px 32px;
+  min-width: 120px;
+  border-radius: 8px;
+  border: 2px solid #333;
+}
+
+#rock-btn {
+  background-color: #ffcccc;
+}
+#paper-btn {
+  background-color: #ffcccc;
+}
+#scissors-btn {
+  background-color: #ffcccc;
+}
+
+#results {
+  margin-top: 20px;
+  font-size: 20px;
+  min-height: 50px;
+  text-align: center;
+}
+
+#scores {
+  margin-top: 15px;
+  font-size: 18px;
+}
